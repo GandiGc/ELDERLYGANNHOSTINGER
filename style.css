@@ -1,4 +1,20 @@
 /* SECTION 2: PROBLEM OVERVIEW */
+
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap; /* Supaya jika tidak muat ke samping, elemen turun ke bawah secara rapi */
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px; /* agar tidak mepet ke pinggir layar HP */
+} 
+
 .problem-overview {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -155,4 +171,24 @@
     .pain-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Tampilan Khusus Layar HP (Mobile) */
+@media (max-width: 768px) {
+  /* Mengubah susunan menu dari menyamping menjadi menurun */
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Memperkecil ukuran judul yang terlalu besar */
+  h1 {
+    font-size: 24px !important;
+  }
+
+  /* Memastikan tombol tidak keluar dari layar */
+  .button, btn {
+    width: 100%;
+    text-align: center;
+  }
 }
